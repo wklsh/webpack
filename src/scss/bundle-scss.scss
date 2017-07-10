@@ -1,0 +1,28 @@
+/*--------------------------------------------------------------------------------------
+ Partials - 
+ SCSS files that do not convert into actual lines within css.
+ They can be used for variable creations or color declarations
+ --------------------------------------------------------------------------------------*/
+ @import "partials/mixins";
+ @import "partials/color";
+
+/*--------------------------------------------------------------------------------------
+ Modules - 
+ Segemented SCSS files that operate independently, with global declarations
+ --------------------------------------------------------------------------------------*/
+ @import "modules/reset";
+ @import "modules/custom_normalizer";
+ @import "modules/global-classes";
+ @import "modules/typography";
+ @import "modules/clearfix";
+ @import "modules/overall_layout_styling";
+ /* Responsives */	
+	 // Responsive imports here
+/*--------------------------------------------------------------------------------------
+ Components - 
+ Bits and pieces of the project overall styling files, these tend to be project
+ specific style files that cannot be used incorporated in templates files, unlike modules
+ --------------------------------------------------------------------------------------*/
+
+ /* Responsives */
+	 // Responsive imports here
