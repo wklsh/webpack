@@ -13,6 +13,6 @@
  Imports
  --------------------------------------------------------------------------------------*/
 	//- CSS
-		// require('../scss/example.scss');
+		require('../scss/bundle-scss.scss');
 	// JS
 		require('_components/example');
