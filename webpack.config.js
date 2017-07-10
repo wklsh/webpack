@@ -73,55 +73,13 @@ console.log("===================================================================
 					filename: 'index.html',
 					template: 'src/index.html'
 				}),
-			// HTML Files - functions
-				new HtmlWebpackPlugin({
-					chunks: ['vendor', 'functions'],
-					preload: false,
-					filename: 'functions.html',
-					template: 'src/functions.html'
-				}),
-			// HTML Files - pricing
-				new HtmlWebpackPlugin({
-					chunks: ['vendor', 'pricing'],
-					preload: false,
-					filename: 'pricing.html',
-					template: 'src/pricing.html'
-				}),
-			// HTML Files - about
-				new HtmlWebpackPlugin({
-					chunks: ['vendor', 'about'],
-					preload: false,
-					filename: 'about.html',
-					template: 'src/about.html'
-				}),
-			// HTML Files - download
-				new HtmlWebpackPlugin({
-					chunks: ['vendor', 'download'],
-					preload: false,
-					filename: 'download.html',
-					template: 'src/download.html'
-				}),
-			// HTML Files - contact
-				new HtmlWebpackPlugin({
-					chunks: ['vendor', 'contact'],
-					preload: false,
-					filename: 'contact.html',
-					template: 'src/contact.html'
-				}),
-			// HTML Files - partner
-				new HtmlWebpackPlugin({
-					chunks: ['vendor', 'partner'],
-					preload: false,
-					filename: 'partner.html',
-					template: 'src/partner.html'
-				}),
 
 		//- Favicon generation
 		//-----------------------------------------------------------------------
-			new FaviconsWebpackPlugin({
-				logo: './src/favicon.png',
-			    prefix: 'favico/',
-			}),
+			// new FaviconsWebpackPlugin({
+			// 	logo: './src/favicon.png',
+			//     prefix: 'favico/',
+			// }),
 
 		//- UglifyJS
 		//-----------------------------------------------------------------------
@@ -189,12 +147,6 @@ console.log("===================================================================
 	const config = {
 		entry: {
 			index: './src/js/bundle-index.js',
-			functions: './src/js/bundle-functions.js',
-			pricing: './src/js/bundle-pricing.js',
-			about: './src/js/bundle-about.js',
-			download: './src/js/bundle-download.js',
-			contact: './src/js/bundle-contact.js',
-			partner: './src/js/bundle-partner.js',
 		},
 
 		output: {
