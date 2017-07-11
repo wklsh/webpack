@@ -18,7 +18,7 @@
  --------------------------------------------------------------------------------------*/
 // Exposes the function to a require in another file
 module.exports = { 
-	testFunc,
+	testFunc1,
 	testFunc2
 	// add more functions...
 }
