@@ -68,7 +68,7 @@ console.log("===================================================================
 		//-----------------------------------------------------------------------
 			// HTML Files - Index
 				new HtmlWebpackPlugin({
-					chunks: ['vendor', 'index'],
+					chunks: ['index'],
 					preload: false,
 					filename: 'index.html',
 					template: 'src/index.html'
@@ -80,14 +80,6 @@ console.log("===================================================================
 			// 	logo: './src/favicon.png',
 			//     prefix: 'favico/',
 			// }),
-
-		//- UglifyJS
-		//-----------------------------------------------------------------------
-			new webpack.optimize.UglifyJsPlugin({ compress:{ warnings: false } }),
-
-		//- AggressiveMerging
-		//-----------------------------------------------------------------------
-			new webpack.optimize.AggressiveMergingPlugin(),
 
 		//- Copies individual files or entire directories to DIST without bundling
 		//-----------------------------------------------------------------------
@@ -132,7 +124,15 @@ console.log("===================================================================
 	    pluginsArray.push(
 	    	//- Remove Dist folder before compiling
 			//-------------------------------------------------------------------
-			new CleanWebpackPlugin(['dist'])
+				new CleanWebpackPlugin(['dist']),
+
+			//- UglifyJS
+			//-----------------------------------------------------------------------
+				new webpack.optimize.UglifyJsPlugin({ compress:{ warnings: false } }),
+
+			//- AggressiveMerging
+			//-----------------------------------------------------------------------
+				new webpack.optimize.AggressiveMergingPlugin()
 	    );
 	}
 
