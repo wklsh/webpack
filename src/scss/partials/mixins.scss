@@ -115,6 +115,7 @@
 	@include get-spacing(100); *use value from photoshop*
  }
  --------------------------------------------------------------------------------------*/
- @function get-spacing($tracking) {
- 	@return ( $tracking / 1000 ) * 1em; 
+ @mixin get-spacing($tracking) {
+ 	$tracking: ( $tracking / 1000 ) * 1rem;
+ 	letter-spacing: $tracking;
  }
