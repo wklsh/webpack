@@ -83,7 +83,10 @@ console.log("===================================================================
 
 		//- Copies individual files or entire directories to DIST without bundling
 		//-----------------------------------------------------------------------
-			new CopyWebpackPlugin([{ from: 'src/js/externals/*', to: 'js/externals/[name].[ext]' }]),
+			new CopyWebpackPlugin([
+				{ from: 'src/externals/js/*', to: 'externals/js/[name].[ext]' },
+				{ from: 'src/externals/video/*', to: 'externals/video/[name].[ext]' }
+			]),
 
 		/*---------------------------------------------------------------------*/ 
 		// Webpack Bundle Analyzer *** UNCOMMENT THIS SECTION
