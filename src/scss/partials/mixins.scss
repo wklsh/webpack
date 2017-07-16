@@ -116,6 +116,6 @@
  }
  --------------------------------------------------------------------------------------*/
  @mixin get-spacing($tracking) {
- 	$tracking: ( $tracking / 1000 ) * 1rem;
+ 	$tracking: ( $tracking / 1000 ) * 1em;
  	letter-spacing: $tracking;
  }
