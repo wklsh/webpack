@@ -5,6 +5,8 @@ module.exports = {
 								"> 5%"
 							]
 						},
-	    'cssnano': {}
+	    'cssnano': {
+	    	reduceIdents: false,
+		}
 	},
 }
