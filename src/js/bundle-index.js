@@ -15,4 +15,4 @@
 	//- CSS
 		require('../scss/bundle-scss.scss');
 	// JS
-		require('_components/example-import');
+		require('_components/_example-import');
