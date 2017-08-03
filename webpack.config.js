@@ -33,12 +33,12 @@ console.log("===================================================================
 
 		//- Split common chunks into a seperate JS vendor file
 		//-----------------------------------------------------------------------
-			new webpack.optimize.CommonsChunkPlugin({
-			  name: "vendor",
-			  // filename: "js/bundle-vendor.[hash].js",
-			  filename: "js/bundle-vendor.js",
-			  minChunks: 5,
-			}),
+			// new webpack.optimize.CommonsChunkPlugin({
+			//   name: "vendor",
+			//   // filename: "js/bundle-vendor.[hash].js",
+			//   filename: "js/bundle-vendor.js",
+			//   minChunks: 5,
+			// }),
 
 		//- Extract out CSS into a seperate file
 		//-----------------------------------------------------------------------
