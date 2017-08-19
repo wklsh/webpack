@@ -13,9 +13,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 /*------------------------------------------------------------------------------*/ 
 
-console.log("============================================================================");
-console.log("process.env.NODE_ENV: " + process.env.NODE_ENV.toUpperCase());
-console.log("============================================================================");
+console.log("\n\n\n============================================================================");
+console.log("   Compling for: " + process.env.NODE_ENV.toUpperCase());
+console.log("   Build time: " + new Date().toLocaleTimeString());
+console.log("============================================================================\n");
 
 
 
