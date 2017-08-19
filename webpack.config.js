@@ -99,21 +99,22 @@ console.log("===================================================================
 				disable: process.env.NODE_ENV == 'development',
 				test: 'img/***',
 					mozjpeg: {
+						quality: 75,
 						progressive: true,
 					},
 					gifsicle: {
 						interlaced: false,
 					},
-					optipng: {
-						optimizationLevel: 4,
-					},
 					pngquant: {
 						quality: '75-90',
-						speed: 3,
+						speed: 5,
+					},
+					optipng: {
+						optimizationLevel: 2,
 					},
 					svgo: {
 						removeViewBox: false,
-						removeEmptyAttrs: false,
+						removeEmptyAttrs: true,
 					},
 			}),
 
