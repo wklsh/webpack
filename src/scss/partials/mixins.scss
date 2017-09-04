@@ -112,7 +112,8 @@
 
  USAGE:
  div {
-	@include get-spacing(100); *use value from photoshop*
+	@include get-spacing(100);
+	*use value from photoshop*
  }
  --------------------------------------------------------------------------------------*/
  @mixin get-spacing($tracking) {
