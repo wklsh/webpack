@@ -1,14 +1,14 @@
-const path = require('path');
-const webpack = require('webpack');
+const 	path = require('path'),
+		webpack = require('webpack');
 
-const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const 	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
+ 		ExtractTextPlugin = require('extract-text-webpack-plugin'),
+ 		HtmlWebpackPlugin = require('html-webpack-plugin'),
+ 		CleanWebpackPlugin = require('clean-webpack-plugin'),
+ 		FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
+ 		ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin'),
+ 		ImageminPlugin = require('imagemin-webpack-plugin').default,
+ 		CopyWebpackPlugin = require('copy-webpack-plugin');
 /*-----------------------------------------------------------------------------*/ 
 // Webpack Bundle Analyzer *** UNCOMMENT THIS SECTION
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
