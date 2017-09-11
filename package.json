@@ -29,6 +29,7 @@
     "throttle-debounce": "^1.0.1",
     "uglifyjs-webpack-plugin": "^0.4.3",
     "webpack": "^3.5.5",
+    "webpack-build-notifier": "^0.1.16",
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^2.4.5"
   },

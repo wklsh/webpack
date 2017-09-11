@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -25,6 +26,15 @@ console.log("===================================================================
  * PLUGIN
  *-----------------------------------------------------------------------------------------*/
 	const pluginsArray = [
+
+		//- Webpack Build Notifier
+		//-----------------------------------------------------------------------
+			new WebpackBuildNotifierPlugin({
+		      title: "Webpack Build",
+		      logo: path.resolve("./img/favicon.png"),
+		      suppressSuccess: true
+		    }),
+
 		//- Expose Dev/Prod Enviroment to JS
 		//-----------------------------------------------------------------------
 			new webpack.DefinePlugin({
