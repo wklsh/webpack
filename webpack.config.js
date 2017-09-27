@@ -1,26 +1,24 @@
 const 	path = require('path'),
-		webpack = require('webpack');
+		webpack = require('webpack')
 
-const 	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
- 		ExtractTextPlugin = require('extract-text-webpack-plugin'),
- 		HtmlWebpackPlugin = require('html-webpack-plugin'),
- 		CleanWebpackPlugin = require('clean-webpack-plugin'),
- 		FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
- 		ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin'),
- 		ImageminPlugin = require('imagemin-webpack-plugin').default,
- 		CopyWebpackPlugin = require('copy-webpack-plugin');
+const	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
+		ExtractTextPlugin = require('extract-text-webpack-plugin'),
+		HtmlWebpackPlugin = require('html-webpack-plugin'),
+		CleanWebpackPlugin = require('clean-webpack-plugin'),
+		FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
+		ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin'),
+		ImageminPlugin = require('imagemin-webpack-plugin').default,
+		CopyWebpackPlugin = require('copy-webpack-plugin'),
+		imageminJpegRecompress = require('imagemin-jpeg-recompress')
 /*-----------------------------------------------------------------------------*/ 
 // Webpack Bundle Analyzer *** UNCOMMENT THIS SECTION
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 /*------------------------------------------------------------------------------*/ 
 
-console.log("\n\n\n============================================================================");
+console.log("============================================================================");
 console.log("   Compling for: " + process.env.NODE_ENV.toUpperCase());
 console.log("   Build time: " + new Date().toLocaleTimeString());
 console.log("============================================================================\n");
-
-
-
 
 /*------------------------------------------------------------------------------------------- 
  * PLUGIN
@@ -109,16 +107,13 @@ console.log("===================================================================
 			new ImageminPlugin({
 				disable: process.env.NODE_ENV == 'development',
 				test: 'img/***',
-					mozjpeg: {
-						quality: 75,
-						progressive: true,
-					},
+					jpegtran: null,
 					gifsicle: {
 						interlaced: false,
 					},
 					pngquant: {
-						quality: '75-90',
-						speed: 5,
+						quality: '70-75',
+						speed: 7,
 					},
 					optipng: {
 						optimizationLevel: 2,
@@ -127,6 +122,11 @@ console.log("===================================================================
 						removeViewBox: false,
 						removeEmptyAttrs: true,
 					},
+				plugins: [
+					imageminJpegRecompress({
+						quality: 'low'
+					})
+				]
 			}),
 
 		//- Init Prefetch JS
@@ -159,7 +159,7 @@ console.log("===================================================================
 /*------------------------------------------------------------------------------------------- 
  * CONFIG
  *-----------------------------------------------------------------------------------------*/
-	const config = {
+	module.exports = {
 		entry: {
 			index: './src/js/bundle-index.js',
 		},
@@ -265,5 +265,3 @@ console.log("===================================================================
 		    }
 		},
 	};
-
-module.exports = config;
