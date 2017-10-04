@@ -218,7 +218,7 @@ console.log("===================================================================
 					exclude: /node_module/,
 					use: [{
 						loader: 'babel-loader',
-						options: { presets: ['es2015'] },
+						options: { presets: ['env'] },
 					}],
 				},
 				{
