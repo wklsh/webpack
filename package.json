@@ -1,5 +1,5 @@
 {
-  "name": "WKLSH",
+  "name": "html-webpack",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,7 +7,7 @@
     "build:prod": "NODE_ENV=production webpack --progress --colors"
   },
   "author": "WKLSH",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
