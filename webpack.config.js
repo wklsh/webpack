@@ -9,7 +9,11 @@ const	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
 		ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin'),
 		ImageminPlugin = require('imagemin-webpack-plugin').default,
 		CopyWebpackPlugin = require('copy-webpack-plugin'),
-		imageminJpegRecompress = require('imagemin-jpeg-recompress')
+		imageminJpegRecompress = require('imagemin-jpeg-recompress'),
+		DashboardPlugin = require('webpack-dashboard/plugin')
+
+
+
 /*-----------------------------------------------------------------------------*/ 
 // Webpack Bundle Analyzer *** UNCOMMENT THIS SECTION
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -32,6 +36,10 @@ console.log("===================================================================
 		      logo: path.resolve("./img/favicon.png"),
 		      suppressSuccess: true
 		    }),
+
+		//- Webpack Dashboard
+		//-----------------------------------------------------------------------
+			new DashboardPlugin(),
 
 		//- Expose Dev/Prod Enviroment to JS
 		//-----------------------------------------------------------------------
