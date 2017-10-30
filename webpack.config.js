@@ -12,6 +12,8 @@ const	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
 		imageminJpegRecompress = require('imagemin-jpeg-recompress'),
 		DashboardPlugin = require('webpack-dashboard/plugin')
 
+const getBuildEnv = (process.env.NODE_ENV === 'development') ? true : false
+
 
 
 /*-----------------------------------------------------------------------------*/ 
@@ -198,12 +200,12 @@ console.log("===================================================================
 									modules: true,
 									importLoaders: 2,
 									localIdentName: '[local]',
-									sourceMap: true,
+									sourceMap: getBuildEnv,
 									minimize: true,
 								}
 							},
-				            { loader: 'postcss-loader', options: { sourceMap: true, }},
-				            { loader: 'sass-loader', options: { sourceMap: true,}},
+				            { loader: 'postcss-loader', options: { sourceMap: getBuildEnv, }},
+				            { loader: 'sass-loader', options: { sourceMap: getBuildEnv,}},
 						]
 					})
 				},
