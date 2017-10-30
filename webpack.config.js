@@ -20,11 +20,10 @@ const getBuildEnv = (process.env.NODE_ENV === 'development') ? true : false
 // Webpack Bundle Analyzer *** UNCOMMENT THIS SECTION
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 /*------------------------------------------------------------------------------*/ 
-
-console.log("============================================================================");
+console.log("==========================================")
 console.log("   Compling for: " + process.env.NODE_ENV.toUpperCase());
 console.log("   Build time: " + new Date().toLocaleTimeString());
-console.log("============================================================================\n");
+console.log("==========================================")
 
 /*------------------------------------------------------------------------------------------- 
  * PLUGIN
