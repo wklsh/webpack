@@ -186,10 +186,14 @@ console.log("==========================================")
 		},
 
 		devServer: {
-			contentBase: '.',
+			historyApiFallback: true,
+			inline: true,
+			progress: true,
+			contentBase: './src',
+			compress: true,
 			host: '0.0.0.0',
 			port: 3000,
-			disableHostCheck: true,
+			disableHostCheck: true
 		},
 
 		devtool: "#inline-source-map", // Default development sourcemap
