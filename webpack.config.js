@@ -1,18 +1,19 @@
 const 	path = require('path'),
 		webpack = require('webpack')
 
-const	WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
-		ExtractTextPlugin = require('extract-text-webpack-plugin'),
+const	ExtractTextPlugin = require('extract-text-webpack-plugin'),
 		HtmlWebpackPlugin = require('html-webpack-plugin'),
+		CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default,
+		CopyWebpackPlugin = require('copy-webpack-plugin'),
 		CleanWebpackPlugin = require('clean-webpack-plugin'),
 		FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
 		ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin'),
 		ImageminPlugin = require('imagemin-webpack-plugin').default,
-		CopyWebpackPlugin = require('copy-webpack-plugin'),
 		imageminJpegRecompress = require('imagemin-jpeg-recompress'),
+		WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
 		DashboardPlugin = require('webpack-dashboard/plugin')
 
-const getBuildEnv = (process.env.NODE_ENV === 'development') ? true : false
+const 	getBuildEnv = (process.env.NODE_ENV === 'development') ? true : false
 
 
 
@@ -64,6 +65,12 @@ console.log("==========================================")
 				// filename: 'main.[hash].css',
 				filename: 'bundle-scss.css',
 				allChunks: true,
+			}),
+
+		//- Split CSS bundle when file exceeds x(def. 4000) number of selectors
+		//-----------------------------------------------------------------------
+			new CSSSplitWebpackPlugin({
+				size: 3500
 			}),
 
 		//- Include JQuery
