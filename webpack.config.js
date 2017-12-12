@@ -4,6 +4,7 @@ const 	path = require('path'),
 const	ExtractTextPlugin = require('extract-text-webpack-plugin'),
 		HtmlWebpackPlugin = require('html-webpack-plugin'),
 		CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default,
+      		cssoWebpackPlugin = require('csso-webpack-plugin').default,
 		CopyWebpackPlugin = require('copy-webpack-plugin'),
 		CleanWebpackPlugin = require('clean-webpack-plugin'),
 		FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
@@ -11,19 +12,15 @@ const	ExtractTextPlugin = require('extract-text-webpack-plugin'),
 		ImageminPlugin = require('imagemin-webpack-plugin').default,
 		imageminJpegRecompress = require('imagemin-jpeg-recompress'),
 		WebpackBuildNotifierPlugin = require('webpack-build-notifier'),
-		DashboardPlugin = require('webpack-dashboard/plugin')
+		DashboardPlugin = require('webpack-dashboard/plugin'),
+      		BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const 	getBuildEnv = (process.env.NODE_ENV === 'development') ? true : false
 
 
-
-/*-----------------------------------------------------------------------------*/ 
-// Webpack Bundle Analyzer *** UNCOMMENT THIS SECTION
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-/*------------------------------------------------------------------------------*/ 
 console.log("==========================================")
-console.log("   Compling for: " + process.env.NODE_ENV.toUpperCase());
-console.log("   Build time: " + new Date().toLocaleTimeString());
+console.log("   Compling for: " + process.env.NODE_ENV.toUpperCase())
+console.log("   Build time: " + new Date().toLocaleTimeString())
 console.log("==========================================")
 
 /*------------------------------------------------------------------------------------------- 
@@ -66,6 +63,10 @@ console.log("==========================================")
 				filename: 'bundle-scss.css',
 				allChunks: true,
 			}),
+		
+		//- CSS restructing optimisation
+		//-----------------------------------------------------------------------
+			new cssoWebpackPlugin(),
 
 		//- Split CSS bundle when file exceeds x(def. 4000) number of selectors
 		//-----------------------------------------------------------------------
