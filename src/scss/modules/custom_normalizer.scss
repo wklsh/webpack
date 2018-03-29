@@ -38,3 +38,24 @@ a:not([href]):not([tabindex]) {
 section {
 	position: relative;
 }
+
+br {
+  &::selection {
+    text-shadow: none;
+  }
+  &::-moz-selection {
+    text-shadow: none;
+  }
+  &::selection {
+    text-shadow: none;
+  }
+  &::-moz-selection {
+    text-shadow: none;
+  }
+  &::selection {
+    text-shadow: none;
+  }
+  &::-moz-selection {
+    text-shadow: none;
+  }
+}
